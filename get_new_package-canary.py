@@ -3,7 +3,7 @@ import shutil
 import requests
 from sys import exit
 
-initial_req = requests.get("https://discord.com/api/download?platform=linux&format=deb", allow_redirects=False)
+initial_req = requests.get("https://discord.com/api/download/canary?platform=linux&format=deb", allow_redirects=False)
 initial_req.raise_for_status()
 
 url = initial_req.headers["Location"]
