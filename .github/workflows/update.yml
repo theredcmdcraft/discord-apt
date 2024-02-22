@@ -20,7 +20,7 @@ jobs:
           # Imported using `gpg --export-secret-key "Discord Apt Repository" | base64 > private.pgp`
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}      
         run: |
-          echo -n "${{ secrets.PRIVATE_KEY }}" | base64 --decode | gpg --pinentry-mode loopback --batch --import && gpg --list-keys
+          echo -n "${{ secrets.PRIVATE_KEY }}" | base64 --decode | gpg --pinentry-mode loopback --batch --import
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
