@@ -10,7 +10,7 @@ url = initial_req.headers["Location"]
 filename = url.split("/")[-1]
 debian_pool = Path(__file__).parent.joinpath("debian", "pool")
 local_path = debian_pool.joinpath(filename)
-for existing in debian_pool.glob("*.deb"):
+for existing in debian_pool.glob("discord-ptp-*.deb"):
     if existing == local_path:
         continue
     print("removing", existing)
