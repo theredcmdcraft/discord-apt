@@ -28,16 +28,16 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-      - name: Update packages Canary
-        env: 
-            KEY_PASSPHRASE: ${{ secrets.KEY_PASSPHRASE }}
-        run: |
-            python get_new_package-canary.py || exit 0
-            ls -l debian/pool  
-            git lfs fetch
-            git lfs checkout
-            ls -l debian/pool            
-            make debian/Release.gpg
+      #- name: Update packages Canary
+      #  env: 
+      #      KEY_PASSPHRASE: ${{ secrets.KEY_PASSPHRASE }}
+        #run: |
+        #    python get_new_package-canary.py || exit 0
+        #    ls -l debian/pool  
+        #    git lfs fetch
+        #    git lfs checkout
+        #    ls -l debian/pool            
+        #    make debian/Release.gpg
 
       - name: Update packages Development
         env: 
